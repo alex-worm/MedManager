@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HM.Data.Entities
+namespace MedManager.Entities
 {
     public class EmployeesToWards
     {

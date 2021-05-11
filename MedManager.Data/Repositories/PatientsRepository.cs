@@ -1,4 +1,4 @@
-﻿using HM.Data.Entities;
+﻿using MedManager.Entities;
 
 namespace MedManager.Data.Repositories
 {

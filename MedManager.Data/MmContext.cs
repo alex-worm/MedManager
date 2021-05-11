@@ -1,4 +1,4 @@
-using HM.Data.Entities;
+using MedManager.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedManager.Data

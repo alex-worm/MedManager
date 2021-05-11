@@ -6,21 +6,20 @@ import { RequestBuilder } from './request-builder';
 const apiController = 'Employees';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeesDataService {
+  constructor(private readonly builder: RequestBuilder) {}
 
-    constructor(private readonly builder: RequestBuilder) { }
+  public getEmployeesList(): Observable<Employee[]> {
+    return this.builder.useApiUrl(`v1/${apiController}/`).get<Employee[]>();
+  }
 
-    public getEmployeesList(): Observable<Employee[]> {
-        return this.builder.useApiUrl(`${apiController}/`).get<Employee[]>();
-    }
+  public getEmloyeeById(id: number): Observable<Employee> {
+    return this.builder.useApiUrl(`v1/${apiController}/${id}/`).get<Employee>();
+  }
 
-    public getEmloyeeById(id: number): Observable<Employee> {
-        return this.builder.useApiUrl(`${apiController}/${id}/`).get<Employee>();
-    }
-
-    public updateEmployee(employee: Employee) {
-        return this.builder.useApiUrl(apiController).put(employee);
-    }
+  public updateEmployee(employee: Employee) {
+    return this.builder.useApiUrl(`v1/${apiController}/`).put(employee);
+  }
 }

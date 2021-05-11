@@ -6,8 +6,8 @@ namespace MedManager.Web.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class PatientsController : BaseEntityController<Patient>
+    public class DiagnosesController : BaseEntityController<Diagnosis>
     {
-        public PatientsController(GenericRepository<Patient> repository) : base(repository){}
+        public DiagnosesController(GenericRepository<Diagnosis> repository) : base(repository){}
     }
 }

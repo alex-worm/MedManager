@@ -1,4 +1,4 @@
-namespace HM.Data.Entities
+namespace MedManager.Entities
 {
     public class Position
     {

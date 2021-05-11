@@ -1,0 +1,12 @@
+<h2>Medicaments</h2>
+
+<mat-card
+  *ngFor="let medicament of medicaments"
+  class="card"
+  routerLink="/medicament-details/{{ medicament.id }}"
+>
+  <mat-card-header>
+    <mat-card-title>{{ medicament.name }}</mat-card-title>
+    <mat-card-subtitle>${{ medicament.cost }}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

@@ -14,4 +14,8 @@
       <ProjectReference Include="..\MedManager.Entities\MedManager.Entities.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="wwwroot\*" />
+    </ItemGroup>
+
 </Project>

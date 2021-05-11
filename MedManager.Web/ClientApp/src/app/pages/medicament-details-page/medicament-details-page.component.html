@@ -1,4 +1,4 @@
-<div *ngIf="employee">
+<div *ngIf="medicament">
   <div class="empl">
     <table cellspacing="0" class="example-full-width">
       <tr>
@@ -6,13 +6,13 @@
           <mat-form-field class="example-form-field">
             <mat-label>Name</mat-label>
             <input
-              [(ngModel)]="employee.name"
-              id="employee-name"
+              [(ngModel)]="medicament.name"
+              id="medicament-name"
               matInput
               type="text"
             />
             <button
-              (click)="employee.name = ''"
+              (click)="medicament.name = ''"
               aria-label="Clear"
               mat-button
               mat-icon-button
@@ -28,13 +28,13 @@
           <mat-form-field class="example-form-field">
             <mat-label>Contact Phone</mat-label>
             <input
-              [(ngModel)]="employee.contactPhone"
-              id="employee-age"
+              [(ngModel)]="medicament.cost"
+              id="medicament-cost"
               matInput
               type="text"
             />
             <button
-              (click)="employee.contactPhone = ''"
+              (click)="medicament.contactPhone = ''"
               aria-label="Clear"
               mat-button
               mat-icon-button

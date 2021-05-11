@@ -1,20 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HM.Data.Entities;
 using MedManager.Data;
 using MedManager.Data.Repositories;
+using MedManager.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 
 namespace MedManager.Web
 {
@@ -32,15 +24,20 @@ namespace MedManager.Web
         {
             services.AddCors();
 
-            string connection = Configuration.GetConnectionString("LocalConnection");
+            var connection = Configuration.GetConnectionString("LocalConnection");
 
             services.AddDbContext<MmContext>(options =>
                 options.UseSqlServer(connection));
             
-            services.AddTransient<PatientsRepository>();
+            services.AddTransient<GenericRepository<Patient>>();
+            services.AddTransient<GenericRepository<Employee>>();
+            services.AddTransient<GenericRepository<Medicament>>();
             
             services.AddControllers();
-            services.AddSwaggerDocument();
+            services.AddSwaggerDocument(settings =>
+            {
+                settings.Title = "MedManager";
+            });
 
         }
 
@@ -51,7 +48,10 @@ namespace MedManager.Web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseOpenApi();
-                app.UseSwaggerUi3();
+                app.UseSwaggerUi3(cfg =>
+                {
+                    cfg.CustomInlineStyles = ".topbar-wrapper img {content:url('https://among-us.io/wp-content/uploads/2020/09/among-us-logo.png');}";
+                });
             }
 
             app.UseHttpsRedirection();

@@ -32,6 +32,11 @@ namespace MedManager.Web
             services.AddTransient<GenericRepository<Patient>>();
             services.AddTransient<GenericRepository<Employee>>();
             services.AddTransient<GenericRepository<Medicament>>();
+            services.AddTransient<GenericRepository<Inspection>>();
+            services.AddTransient<GenericRepository<Plot>>();
+            services.AddTransient<GenericRepository<Ward>>();
+            services.AddTransient<GenericRepository<Diagnosis>>();
+            services.AddTransient<GenericRepository<InspectionType>>();
             
             services.AddControllers();
             services.AddSwaggerDocument(settings =>

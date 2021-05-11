@@ -13,6 +13,8 @@ import { EmployeesDataService } from './services/employees.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MedicamentsPageComponent } from './pages/medicaments-page/medicaments-page.component';
 import { MedicamentDetailsPageComponent } from './pages/medicament-details-page/medicament-details-page.component';
+import { InspectionDetailsPageComponent } from './pages/inspection-details-page/inspection-details-page.component';
+import { InspectionsPageComponent } from './pages/inspections-page/inspections-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { MedicamentDetailsPageComponent } from './pages/medicament-details-page/
     EmployeeDetailsPageComponent,
     MedicamentsPageComponent,
     MedicamentDetailsPageComponent,
+    InspectionDetailsPageComponent,
+    InspectionsPageComponent,
   ],
   imports: [
     FormsModule,

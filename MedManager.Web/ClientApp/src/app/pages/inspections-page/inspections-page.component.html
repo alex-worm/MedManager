@@ -1,0 +1,11 @@
+<h2>Inspections</h2>
+
+<mat-card
+  *ngFor="let inspection of inspections"
+  class="card"
+  routerLink="/inspection-details/{{ inspection.id }}"
+>
+  <mat-card-header>
+    <mat-card-title>{{ inspection.date }}</mat-card-title>
+  </mat-card-header>
+</mat-card>
